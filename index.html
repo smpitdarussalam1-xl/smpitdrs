@@ -1,0 +1,516 @@
+"use client";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Menu,
+  X,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Youtube,
+  Users,
+  Calendar,
+  Award,
+  BookOpen,
+} from "lucide-react";
+
+export default function AmtsilatiPusatWebsite() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center">
+              <div className="bg-primary rounded-md p-2 mr-3">
+                <Users className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <h1 className="text-xl font-bold text-foreground">
+                AMTSILATI PUSAT
+              </h1>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-8">
+              <a href="#" className="text-foreground hover:text-primary font-medium">
+                Beranda
+              </a>
+              <a href="#" className="text-foreground hover:text-primary font-medium">
+                Tentang
+              </a>
+              <a href="#" className="text-foreground hover:text-primary font-medium">
+                Program
+              </a>
+              <a href="#" className="text-foreground hover:text-primary font-medium">
+                Galeri
+              </a>
+              <a href="#" className="text-foreground hover:text-primary font-medium">
+                Kontak
+              </a>
+            </nav>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-foreground"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-4 pb-4">
+              <div className="flex flex-col space-y-3">
+                <a href="#" className="text-foreground hover:text-primary font-medium py-2">
+                  Beranda
+                </a>
+                <a href="#" className="text-foreground hover:text-primary font-medium py-2">
+                  Tentang
+                </a>
+                <a href="#" className="text-foreground hover:text-primary font-medium py-2">
+                  Program
+                </a>
+                <a href="#" className="text-foreground hover:text-primary font-medium py-2">
+                  Galeri
+                </a>
+                <a href="#" className="text-foreground hover:text-primary font-medium py-2">
+                  Kontak
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Perguruan Silat <span className="text-primary">AMTSILATI</span> Pusat
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Melestarikan dan mengembangkan seni bela diri tradisional Indonesia melalui pendidikan, pelatihan, dan pengembangan karakter.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  Daftar Sekarang
+                </Button>
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                  Pelajari Lebih Lanjut
+                </Button>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Indonesian%20martial%20arts%20silat%20demonstration%20with%20traditional%20uniforms&id=amtsilati-hero" 
+                alt="Silat martial arts demonstration with practitioners in traditional uniforms performing defensive poses" 
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-foreground mb-4">Program Unggulan</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Kami menawarkan berbagai program untuk semua usia dan tingkat keahlian dalam seni bela diri silat.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-border hover:shadow-md transition-shadow">
+              <CardHeader>
+                <div className="bg-primary/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle>Silat untuk Pemula</CardTitle>
+                <CardDescription>
+                  Program pengenalan untuk mereka yang baru memulai perjalanan silat.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/10">
+                  Selengkapnya
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border hover:shadow-md transition-shadow">
+              <CardHeader>
+                <div className="bg-primary/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  <Award className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle>Silat Tingkat Lanjut</CardTitle>
+                <CardDescription>
+                  Program untuk mereka yang ingin mendalami teknik dan filosofi silat.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/10">
+                  Selengkapnya
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border hover:shadow-md transition-shadow">
+              <CardHeader>
+                <div className="bg-primary/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                  <BookOpen className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle>Pelatihan Instruktur</CardTitle>
+                <CardDescription>
+                  Program sertifikasi untuk menjadi instruktur silat bersertifikat.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/10">
+                  Selengkapnya
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Traditional%20Indonesian%20silat%20training%20session%20in%20a%20dojo&id=amtsilati-about" 
+                alt="Traditional Indonesian silat training session in a dojo with students practicing techniques" 
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-foreground mb-6">Tentang AMTSILATI Pusat</h3>
+              <p className="text-muted-foreground mb-6">
+                AMTSILATI Pusat adalah perguruan silat yang berdedikasi untuk melestarikan dan mengembangkan seni bela diri tradisional Indonesia. 
+                Kami telah melatih ribuan siswa dari berbagai usia dan latar belakang sejak berdiri.
+              </p>
+              <p className="text-muted-foreground mb-8">
+                Dengan metode pengajaran yang terstruktur dan instruktur berpengalaman, kami tidak hanya mengajarkan teknik bela diri tetapi juga 
+                nilai-nilai disiplin, respect, dan pengembangan karakter.
+              </p>
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Sejarah Lengkap
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Preview */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-foreground mb-4">Galeri Kegiatan</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Dokumentasi berbagai kegiatan, latihan, dan event yang diselenggarakan oleh AMTSILATI Pusat.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="overflow-hidden rounded-lg">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Silat%20training%20session%20with%20group%20of%20students&id=amtsilati-gallery-1" 
+                alt="Group silat training session with students practicing defensive moves together" 
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Silat%20demonstration%20at%20cultural%20event&id=amtsilati-gallery-2" 
+                alt="Silat demonstration at a cultural event with performers in traditional attire" 
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Silat%20belt%20promotion%20ceremony&id=amtsilati-gallery-3" 
+                alt="Silat belt promotion ceremony with students receiving new ranks" 
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+              Lihat Galeri Lengkap
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-foreground mb-4">Event Mendatang</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Ikuti event-event menarik yang diselenggarakan oleh AMTSILATI Pusat.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-border">
+              <CardHeader>
+                <div className="flex items-center mb-2">
+                  <Calendar className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-sm text-muted-foreground">15 Oktober 2023</span>
+                </div>
+                <CardTitle>Seminar Silat Nasional</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Seminar tentang perkembangan silat modern dan tradisional dengan pembicara ahli dari berbagai perguruan.
+                </p>
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                  Daftar Sekarang
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border">
+              <CardHeader>
+                <div className="flex items-center mb-2">
+                  <Calendar className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-sm text-muted-foreground">28 November 2023</span>
+                </div>
+                <CardTitle>Kejuaraan Silat Regional</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Kejuaraan silat antar perguruan se-regional dengan berbagai kategori pertandingan.
+                </p>
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                  Info Lengkap
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-3xl font-bold text-foreground mb-6">Hubungi Kami</h3>
+              <p className="text-muted-foreground mb-8">
+                Tertarik untuk bergabung atau memiliki pertanyaan tentang program kami? Jangan ragu untuk menghubungi kami.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <MapPin className="h-6 w-6 text-primary mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Alamat</h4>
+                    <p className="text-muted-foreground">
+                      Jl. Merdeka No. 123, Jakarta Pusat, DKI Jakarta, Indonesia
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Phone className="h-6 w-6 text-primary mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Telepon</h4>
+                    <p className="text-muted-foreground">+62 21 1234 5678</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Mail className="h-6 w-6 text-primary mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Email</h4>
+                    <p className="text-muted-foreground">info@amtsilatipusat.net</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <h4 className="font-semibold text-foreground mb-4">Ikuti Kami</h4>
+                <div className="flex space-x-4">
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    <Facebook className="h-6 w-6" />
+                  </a>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    <Instagram className="h-6 w-6" />
+                  </a>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    <Youtube className="h-6 w-6" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <Card className="border-border">
+                <CardHeader>
+                  <CardTitle>Formulir Kontak</CardTitle>
+                  <CardDescription>
+                    Isi formulir berikut dan kami akan menghubungi Anda secepatnya.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Nama Lengkap</Label>
+                      <Input id="name" placeholder="Nama lengkap Anda" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input id="email" type="email" placeholder="email@contoh.com" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Nomor Telepon</Label>
+                      <Input id="phone" placeholder="+62 xxx xxxx xxxx" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Pesan</Label>
+                      <textarea
+                        id="message"
+                        placeholder="Tulis pesan Anda di sini"
+                        className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      />
+                    </div>
+                    <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                      Kirim Pesan
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-card border-t border-border py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center mb-4">
+                <div className="bg-primary rounded-md p-2 mr-3">
+                  <Users className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <h4 className="text-xl font-bold text-foreground">AMTSILATI PUSAT</h4>
+              </div>
+              <p className="text-muted-foreground mb-6 max-w-md">
+                Perguruan silat yang berdedikasi untuk melestarikan dan mengembangkan seni bela diri tradisional Indonesia.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-muted-foreground hover:text-primary">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-muted-foreground hover:text-primary">
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-muted-foreground hover:text-primary">
+                  <Youtube className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h5 className="font-semibold text-foreground mb-4">Tautan Cepat</h5>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Beranda
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Tentang Kami
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Program
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Galeri
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Kontak
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-semibold text-foreground mb-4">Program</h5>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Silat untuk Pemula
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Silat Tingkat Lanjut
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Pelatihan Instruktur
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary">
+                    Workshop Silat
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-muted-foreground text-sm">
+              © 2023 AMTSILATI Pusat. All rights reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary">
+                Kebijakan Privasi
+              </a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary">
+                Syarat & Ketentuan
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
